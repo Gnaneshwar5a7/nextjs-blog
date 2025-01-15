@@ -31,8 +31,8 @@ export default function RegisterPage() {
     mode: "onBlur",
   });
 
-  const formSubmit = (data: any) => {
-    startTransition(() => action(data));
+  const formSubmit = (data: typeof registerSchema) => {
+    startTransition(() => action(data as any));
   };
 
   return (
