@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "tsx src/db/index.ts && next build",
+    "start": "tsx src/db/index.ts && next start",
     "lint": "next lint"
   },
   "dependencies": {
