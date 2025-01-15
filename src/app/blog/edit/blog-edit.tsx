@@ -1,12 +1,11 @@
 "use client";
 
-import { Container } from "@/components/custom/container";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
-import { CreateBlogAction } from "./action";
 import dynamic from "next/dynamic";
+import { useState } from "react";
+import { UpdateBlogAction } from "./action";
 
 const Editor = dynamic(
   () => import("@/components/custom/editor").then((x) => x.Editor),
@@ -16,17 +15,30 @@ const Editor = dynamic(
   }
 );
 
-export default function Blog() {
-  const [title, setTitle] = useState("");
-  const [editorData, setEditorData] = useState("");
+type Props = {
+  blogId: string;
+  blogTitle: string;
+  blogContent: string;
+};
+
+export default function BlogEdit({
+  blogId,
+  blogTitle = "",
+  blogContent = "",
+}: Props) {
+  const [title, setTitle] = useState(blogTitle);
+  const [editorData, setEditorData] = useState(blogContent);
 
   const handlePublish = () => {
-    CreateBlogAction({ title, content: editorData });
+    UpdateBlogAction({
+      blogId,
+      title,
+      content: editorData,
+    });
   };
 
   return (
-    <Container>
-      <h1 className="mb-8">From Thoughts to Words: Blog Without Limits</h1>
+    <>
       <Label htmlFor="title" className="inline-block mb-2">
         Title
       </Label>
@@ -41,6 +53,6 @@ export default function Blog() {
       <Button onClick={handlePublish} disabled={!title || !editorData}>
         Publish
       </Button>
-    </Container>
+    </>
   );
 }

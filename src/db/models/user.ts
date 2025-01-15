@@ -11,7 +11,7 @@ interface UserAttributes {
 
 type UserCreationAttributes = Optional<UserAttributes, "id">;
 
-interface UserInstance
+export interface UserInstance
   extends Model<UserAttributes, UserCreationAttributes>,
     UserAttributes {
   createdAt?: Date;
