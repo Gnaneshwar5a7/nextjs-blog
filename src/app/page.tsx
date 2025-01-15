@@ -11,7 +11,7 @@ export default async function Home() {
   });
   return (
     <Container className="flex flex-col gap-4 mt-8">
-      {blogs.map((b, i) => (
+      {blogs.map((b) => (
         <Link
           key={b.id}
           href={`/blog/${b.id}`}

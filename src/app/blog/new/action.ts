@@ -2,7 +2,6 @@
 
 import { Blog } from "@/db/models/blog";
 import { getSession } from "@/lib/session";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 type Params = {
@@ -16,7 +15,6 @@ export async function CreateBlogAction(data: Params) {
   }
   const token = await getSession();
   const userId = token?.userDetails?.id;
-  console.log(userId)
   await Blog.create({
     title: data.title,
     content: data.content,

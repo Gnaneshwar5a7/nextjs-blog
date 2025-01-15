@@ -20,7 +20,7 @@ export default async function AuthorBlogsPage({ params }: Props) {
   });
   return (
     <Container className="flex flex-col gap-4 mt-8">
-      {blogs.map((b, i) => (
+      {blogs.map((b) => (
         <div className="px-8 py-4 border rounded-md shadow" key={b.id}>
           <div className="flex flex-row justify-between items-center">
             <p className="text-xl font-medium">{b.title}</p>

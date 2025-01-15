@@ -48,7 +48,7 @@ export default function LoginPage() {
           <CardFooter className="flex flex-col items-start">
             <Button type="submit">Submit</Button>
             <p className="mt-2 text-sm">
-              Don't have an account?
+              Don&apos;t have an account?
               <Link
                 href={"/register"}
                 className="ml-1 text-sm text-blue-600 hover:text-blue-700 hover:underline"
