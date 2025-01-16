@@ -30,7 +30,7 @@ export const Blog = sequelize.define<BlogInstance>("Blogs", {
     allowNull: false,
   },
   content: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false,
   },
   userId: {
