@@ -3,7 +3,7 @@ import "./models/user";
 import "./models/blog";
 
 sequelize
-  .sync({ alter: true })
+  .sync({ alter: true, force: true })
   .then(() => {
     console.log("Database has been synced");
   })
