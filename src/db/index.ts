@@ -1,4 +1,6 @@
 import { sequelize } from "./sequelize";
+import "./models/user";
+import "./models/blog";
 
 sequelize
   .sync({ alter: true })
